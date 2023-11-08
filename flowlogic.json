@@ -1,5 +1,1774 @@
 [
     {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5acafc6c98eedf7f",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico temperatura (1h)",
+        "group": "65d182d4f80bb3b3",
+        "order": 8,
+        "width": "6",
+        "height": "3",
+        "label": "Temperatura (1h)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 430,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29663a01e494e660",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Entrada MQTT temperatura",
+        "topic": "home/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3fec0b2de8663cc9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "5acafc6c98eedf7f",
+                "7cfb6e8e61fcd54c",
+                "723d184c495fdefb"
+            ]
+        ]
+    },
+    {
+        "id": "448ed45471d639fe",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Entrada MQTT umidade",
+        "topic": "home/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3fec0b2de8663cc9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "665d5606a2ed178d",
+                "6f014c5305d1e5ed"
+            ]
+        ]
+    },
+    {
+        "id": "665d5606a2ed178d",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico umidade (1h)",
+        "group": "65d182d4f80bb3b3",
+        "order": 10,
+        "width": "6",
+        "height": "3",
+        "label": "Umidade do ar (1h)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 380,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b45c3732e7be58a",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico umidade do solo (1h)",
+        "group": "b47db99b0a8cb72e",
+        "order": 7,
+        "width": "6",
+        "height": "3",
+        "label": "Umidade do solo (1h)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 760,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c5292c1c9ee7018",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Entrada MQTT umidade do solo",
+        "topic": "home/soilMoisture",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3fec0b2de8663cc9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 840,
+        "wires": [
+            [
+                "7c51b89c255df134"
+            ]
+        ]
+    },
+    {
+        "id": "32019a5467aee41c",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Entrada MQTT luminosidade",
+        "topic": "home/luminosity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3fec0b2de8663cc9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 1360,
+        "wires": [
+            [
+                "e323e9b1184bb3cc"
+            ]
+        ]
+    },
+    {
+        "id": "c1a67b5142de0ee9",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico luminosidade (1h)",
+        "group": "cc11f6763fe9a715",
+        "order": 9,
+        "width": "6",
+        "height": "3",
+        "label": "Luminosidade (1h)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 730,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56a29d8510651032",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "Saída MQTT relé bomba d'água",
+        "topic": "home/pumpControl",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3fec0b2de8663cc9",
+        "x": 1390,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "3231df160cbc393d",
+        "type": "ui_switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Switch bomba d'água",
+        "tooltip": "",
+        "group": "b47db99b0a8cb72e",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 1160,
+        "wires": [
+            [
+                "56a29d8510651032"
+            ]
+        ]
+    },
+    {
+        "id": "fe6775f40121773e",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "Saída MQTT relé ventoinha",
+        "topic": "home/fanControl",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3fec0b2de8663cc9",
+        "x": 1420,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a3f54a9c4bbf4a55",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Pulso PWM",
+        "tooltip": "",
+        "group": "65d182d4f80bb3b3",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "1023",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "16a8db315eb79235"
+            ]
+        ]
+    },
+    {
+        "id": "668b1a33170d9a85",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "Saída MQTT velocidade ventoinha",
+        "topic": "home/fanSpeedControl",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3fec0b2de8663cc9",
+        "x": 1440,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "7cfb6e8e61fcd54c",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico temperatura (10 min)",
+        "group": "65d182d4f80bb3b3",
+        "order": 9,
+        "width": "6",
+        "height": "3",
+        "label": "Temperatura (10 min)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 440,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f014c5305d1e5ed",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico umidade (10 min)",
+        "group": "65d182d4f80bb3b3",
+        "order": 11,
+        "width": "6",
+        "height": "3",
+        "label": "Umidade do ar (10 min)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35d3cad5b561102b",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico umidade do solo (10 min)",
+        "group": "b47db99b0a8cb72e",
+        "order": 8,
+        "width": "6",
+        "height": "3",
+        "label": "Umidade do solo (10 min)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f974eeb7b4675e5d",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Gráfico luminosidade (10 min)",
+        "group": "cc11f6763fe9a715",
+        "order": 10,
+        "width": "6",
+        "height": "3",
+        "label": "Luminosidade (10 min)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5ed75d6c1bc5a69",
+        "type": "yeelight",
+        "z": "f6f2187d.f17ca8",
+        "name": "Brilho lâmpada",
+        "command": "set_bright",
+        "config": "",
+        "x": 1370,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf2eb06eca19e59f",
+        "type": "ui_switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Switch lâmpada automática",
+        "tooltip": "",
+        "group": "cc11f6763fe9a715",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 160,
+        "y": 1300,
+        "wires": [
+            [
+                "4b92169794225b1f"
+            ]
+        ]
+    },
+    {
+        "id": "2737c6eab6facca6",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Slider de brilho",
+        "tooltip": "",
+        "group": "cc11f6763fe9a715",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 120,
+        "y": 1740,
+        "wires": [
+            [
+                "56b1322b01434ed9"
+            ]
+        ]
+    },
+    {
+        "id": "050841823a4f4788",
+        "type": "yeelight",
+        "z": "f6f2187d.f17ca8",
+        "name": "Interruptor lâmpada",
+        "command": "set_power",
+        "config": "",
+        "x": 1390,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb287679cb71e923",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Check se =0",
+        "func": "if(msg.payload === 0) {\n    // Se a entrada for 0, a saída será OFF\n    msg.payload = 0;\n} else if(msg.payload >= 1) {\n    // Se a entrada for maior que 1, a saída será ON\n    msg.payload = 1;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 1500,
+        "wires": [
+            [
+                "050841823a4f4788"
+            ]
+        ]
+    },
+    {
+        "id": "0abeb14ece8564e6",
+        "type": "delay",
+        "z": "f6f2187d.f17ca8",
+        "name": "Delay 100ms",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1150,
+        "y": 1560,
+        "wires": [
+            [
+                "a5ed75d6c1bc5a69"
+            ]
+        ]
+    },
+    {
+        "id": "fc18535ccc1240cc",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Check se =0",
+        "func": "if(msg.payload === 0) {\n    // Se a entrada for 0, a saída será OFF\n    msg.payload = 0;\n} else if(msg.payload >= 1) {\n    // Se a entrada for maior que 1, a saída será ON\n    msg.payload = 1;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 460,
+        "wires": [
+            [
+                "fe6775f40121773e"
+            ]
+        ]
+    },
+    {
+        "id": "e5c1e39ca5f66710",
+        "type": "delay",
+        "z": "f6f2187d.f17ca8",
+        "name": "Delay 100ms",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            [
+                "668b1a33170d9a85"
+            ]
+        ]
+    },
+    {
+        "id": "56b1322b01434ed9",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo manual lâmpada",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoBulb\") || false;\n\nif (autoMode) {\n    return null;\n} else {\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1740,
+        "wires": [
+            [
+                "0abeb14ece8564e6",
+                "bb287679cb71e923"
+            ]
+        ]
+    },
+    {
+        "id": "4b92169794225b1f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Função global lâmpada automática",
+        "func": "// Configura a função global que acompanha o estado do interruptor\nglobal.set(\"autoBulb\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed7c5a71f60a9bc3",
+        "type": "yeelight",
+        "z": "f6f2187d.f17ca8",
+        "name": "Cor lâmpada",
+        "command": "set_rgb",
+        "config": "",
+        "x": 600,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0b7b92125db7d0f",
+        "type": "ui_colour_picker",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Seletor de cores",
+        "group": "cc11f6763fe9a715",
+        "format": "hex",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "true",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 120,
+        "y": 1800,
+        "wires": [
+            [
+                "9143b8580cb8b362"
+            ]
+        ]
+    },
+    {
+        "id": "9143b8580cb8b362",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Hexadecimal para integral",
+        "func": "// Função que converte uma cor hexadecimal para uma inteira\nmsg.payload = parseInt(msg.payload.replace('#', ''), 16);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1800,
+        "wires": [
+            [
+                "ed7c5a71f60a9bc3"
+            ]
+        ]
+    },
+    {
+        "id": "bce06219af04f750",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Seção LDR",
+        "info": "",
+        "x": 110,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "3dece568547a1d70",
+        "type": "ui_switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Switch ventoinha automática",
+        "tooltip": "",
+        "group": "65d182d4f80bb3b3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "8765052de8e74b39"
+            ]
+        ]
+    },
+    {
+        "id": "8765052de8e74b39",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Função global ventoinha automática",
+        "func": "// Configura a função global que acompanha o estado do interruptor\nglobal.set(\"autoFan\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29605c431b0c03c6",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Seção DHT11",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "16a8db315eb79235",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo manual ventoinha",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoFan\") || false;\n\nif (autoMode) {\n    return null;\n} else {\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 640,
+        "wires": [
+            [
+                "e5c1e39ca5f66710",
+                "fc18535ccc1240cc"
+            ]
+        ]
+    },
+    {
+        "id": "d164d36dc43cac6f",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Seção YL-69",
+        "info": "",
+        "x": 110,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "902a91bcf86d3f38",
+        "type": "ui_switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Switch bomba d'água automática",
+        "tooltip": "",
+        "group": "b47db99b0a8cb72e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "bd1148f14a0363ed"
+            ]
+        ]
+    },
+    {
+        "id": "bd1148f14a0363ed",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Função global bomba d'água automática",
+        "func": "// Configura a função global que acompanha o estado do interruptor\nglobal.set(\"autoPump\", msg.payload);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "785d98ff1b1e31d1",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Luminosidade desejada (%)",
+        "tooltip": "",
+        "group": "cc11f6763fe9a715",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "20",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 1560,
+        "wires": [
+            [
+                "519ac7f31788682e"
+            ]
+        ]
+    },
+    {
+        "id": "9687381e80942d5f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático ventoinha",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoBulb\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1500,
+        "wires": [
+            [
+                "bb287679cb71e923",
+                "0abeb14ece8564e6"
+            ]
+        ]
+    },
+    {
+        "id": "da7e57e6a6b0a597",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica brilho",
+        "func": "var targetLum = flow.get('targetLum') || 50;\nvar toleranceLum = flow.get('toleranceLum') || 10;\nvar currentLum = flow.get('currentLum') || 70;\n\nlet output;\n\nif (currentLum >= targetLum + toleranceLum) {\n  // Se a luminosidade medida for maior que a soma do alvo e tolerância, retornar 0\n    output = 0;\n} else if (currentLum <= targetLum) {\n  // Se a luminosidade medida for menor que a alvo, retornar o valor máximo\n    output = 100;\n} else {\n    // Se a medida estiver entre o alvo e a soma do alvo e tolerância, a saída seguirá um comportamento linear\n    output = Math.round(((targetLum + toleranceLum - currentLum) / toleranceLum) * 100);\n    output = Math.min(Math.max(output, 0), 100);\n}\n\nmsg.payload = output;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1500,
+        "wires": [
+            [
+                "9687381e80942d5f"
+            ]
+        ]
+    },
+    {
+        "id": "11d98ec4651d9148",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Intervalo de tolerância (%)",
+        "tooltip": "",
+        "group": "cc11f6763fe9a715",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 150,
+        "y": 1620,
+        "wires": [
+            [
+                "409ff7c2188e4c2b"
+            ]
+        ]
+    },
+    {
+        "id": "519ac7f31788682e",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "targetLum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 1560,
+        "wires": [
+            [
+                "da7e57e6a6b0a597",
+                "df979f2fa3302dd9"
+            ]
+        ]
+    },
+    {
+        "id": "409ff7c2188e4c2b",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "toleranceLum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 1620,
+        "wires": [
+            [
+                "da7e57e6a6b0a597",
+                "df979f2fa3302dd9"
+            ]
+        ]
+    },
+    {
+        "id": "0a641d4accb7518e",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentLum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 1500,
+        "wires": [
+            [
+                "da7e57e6a6b0a597"
+            ]
+        ]
+    },
+    {
+        "id": "bd6dc52dab376f38",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Temperatura desejada (°C)",
+        "tooltip": "",
+        "group": "65d182d4f80bb3b3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "10",
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 460,
+        "wires": [
+            [
+                "eabf91ecc31aa8c8"
+            ]
+        ]
+    },
+    {
+        "id": "9ed47bfb84aa7374",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático ventoinha",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoBulb\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 460,
+        "wires": [
+            [
+                "fc18535ccc1240cc",
+                "e5c1e39ca5f66710"
+            ]
+        ]
+    },
+    {
+        "id": "30a82c439ee3ef04",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica velocidade",
+        "func": "var targetTemp = flow.get('targetTemp') || 35;\nvar toleranceTemp = flow.get('toleranceTemp') || 5;\nvar currentTemp = flow.get('currentTemp') || 25;\n\nlet output;\n\nif (currentTemp <= targetTemp) {\n  // Se a temperatura alvo for maior que a medida, retornar 0\n  output = 0;\n} else if (currentTemp >= targetTemp + toleranceTemp) {\n  // Se a temperatura medida for maior que a soma do alvo e tolerância, a saída será o valor máximo\n  output = 1023;\n} else {\n  // Se a medida estiver entre o alvo e a soma do alvo e tolerância, a saída seguirá um comportamento linear\n    output = Math.round(((currentTemp - targetTemp) / toleranceTemp) * 1023);\n    output = Math.min(Math.max(output, 0), 1023);\n}\n\nmsg.payload = output;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "9ed47bfb84aa7374"
+            ]
+        ]
+    },
+    {
+        "id": "83a95a4eb7d50582",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Intervalo de tolerância (°C)",
+        "tooltip": "",
+        "group": "65d182d4f80bb3b3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "10",
+        "step": 1,
+        "className": "",
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "fc910b4a02b04ae4"
+            ]
+        ]
+    },
+    {
+        "id": "eabf91ecc31aa8c8",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "targetTemp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 460,
+        "wires": [
+            [
+                "30a82c439ee3ef04",
+                "4fca70f11bc49625"
+            ]
+        ]
+    },
+    {
+        "id": "fc910b4a02b04ae4",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "toleranceTemp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "30a82c439ee3ef04",
+                "4fca70f11bc49625"
+            ]
+        ]
+    },
+    {
+        "id": "32246e06409708fc",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentTemp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 400,
+        "wires": [
+            [
+                "30a82c439ee3ef04"
+            ]
+        ]
+    },
+    {
+        "id": "e323e9b1184bb3cc",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Absoluto para porcentagem",
+        "func": "// Transforma o valor absoluto da entrada em uma porcentagem\nlet absoluto = msg.payload;\nlet porcento = Math.round((absoluto / 1000) * 100);\n\nmsg.payload = porcento;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1360,
+        "wires": [
+            [
+                "f974eeb7b4675e5d",
+                "c1a67b5142de0ee9",
+                "14032d0d99b05a5e"
+            ]
+        ]
+    },
+    {
+        "id": "2858f004929bea22",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Umidade do solo desejada (%)",
+        "tooltip": "",
+        "group": "b47db99b0a8cb72e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "20",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 1040,
+        "wires": [
+            [
+                "41c3b25864263ef4"
+            ]
+        ]
+    },
+    {
+        "id": "60e8fe7de9640f46",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático bomba",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoPump\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 1040,
+        "wires": [
+            [
+                "56a29d8510651032"
+            ]
+        ]
+    },
+    {
+        "id": "25d54182ca5a8855",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica água",
+        "func": "var targetHum = flow.get('targetHum') || 50;\nvar currentHum = flow.get('currentHum') || 70;\n\nif (currentHum < targetHum) {\n  // Se a umidade alvo for maior que a medida, retornar 1\n    msg.payload = 1;\n} else {\n  // Se a umidade alvo for menor que a medida, retornar 0\n    msg.payload = 0;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1040,
+        "wires": [
+            [
+                "1cf40c87ea7e4110"
+            ]
+        ]
+    },
+    {
+        "id": "41c3b25864263ef4",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "targetHum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 1040,
+        "wires": [
+            [
+                "25d54182ca5a8855",
+                "b05b682baffaab42"
+            ]
+        ]
+    },
+    {
+        "id": "5e883498feca94db",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentHum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 980,
+        "wires": [
+            [
+                "25d54182ca5a8855",
+                "b05b682baffaab42"
+            ]
+        ]
+    },
+    {
+        "id": "1cf40c87ea7e4110",
+        "type": "trigger",
+        "z": "f6f2187d.f17ca8",
+        "name": "Acionar por 10s",
+        "op1": "",
+        "op2": "0",
+        "op1type": "pay",
+        "op2type": "num",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 880,
+        "y": 1040,
+        "wires": [
+            [
+                "60e8fe7de9640f46"
+            ]
+        ]
+    },
+    {
+        "id": "5c73e76c8f4f4bb5",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Array medidas",
+        "func": "var soilHum = flow.get('soilHum') || [];\n\n// Converte o payload para um número e adiciona ao array\nvar currentSoil = parseFloat(msg.payload);\nif (!isNaN(currentSoil)) {\n    soilHum.push(currentSoil);\n    flow.set('soilHum', soilHum);\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7baa43ba08df3da5",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mediana",
+        "func": "var soilHum = flow.get('soilHum') || [];\n\nif (soilHum.length > 0) {\n    // Organiza o array\n    soilHum.sort(function (a, b) {\n        return a - b;\n    });\n\n    // Calcula a mediana\n    var middle = Math.floor(soilHum.length / 2);\n    var median = soilHum.length % 2 === 0 ? (soilHum[middle - 1] + soilHum[middle]) / 2 : soilHum[middle];\n\n    // Limpa o array\n    flow.set('soilHum', []);\n\n    return { payload: median };\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 980,
+        "wires": [
+            [
+                "5e883498feca94db"
+            ]
+        ]
+    },
+    {
+        "id": "6e719d62d32dae4f",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Injeção a cada 1h",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 980,
+        "wires": [
+            [
+                "7baa43ba08df3da5"
+            ]
+        ]
+    },
+    {
+        "id": "7755cd8fb168b1b7",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "65d182d4f80bb3b3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle automático",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 940,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b74d0f872d2ee17c",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "65d182d4f80bb3b3",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle manual",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 920,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9dd6edc736deb257",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "65d182d4f80bb3b3",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Gráficos  (°C x t)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 920,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ba4d798ea66dd367",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "b47db99b0a8cb72e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle automático",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1100,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "c3dc6c67b4be4bda",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "b47db99b0a8cb72e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle manual",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1080,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "34c86c7f3741b4cd",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "b47db99b0a8cb72e",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Gráficos (% x t)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1080,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "326a3527a2544fcf",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc11f6763fe9a715",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle automático",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1180,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "9216be3d014fe12c",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc11f6763fe9a715",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Controle manual",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1160,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "5cabbcf46583c812",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc11f6763fe9a715",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Gráficos (% x t)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#a6a6a6",
+        "x": 1160,
+        "y": 1420,
+        "wires": []
+    },
+    {
         "id": "7c51b89c255df134",
         "type": "function",
         "z": "f6f2187d.f17ca8",
@@ -20,5 +1789,536 @@
                 "5c73e76c8f4f4bb5"
             ]
         ]
+    },
+    {
+        "id": "723d184c495fdefb",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Array medidas",
+        "func": "var tempAir = flow.get('tempAir') || [];\n\n// Converte o payload para um número e adiciona ao array\nvar currentTemp = parseFloat(msg.payload);\nif (!isNaN(currentTemp)) {\n    tempAir.push(currentTemp);\n    flow.set('tempAir', tempAir);\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d82f2ab8db1f617c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mediana",
+        "func": "var tempAir = flow.get('tempAir') || [];\n\nif (tempAir.length > 0) {\n    // Organiza o array\n    tempAir.sort(function (a, b) {\n        return a - b;\n    });\n\n    // Calcula a mediana\n    var middle = Math.floor(tempAir.length / 2);\n    var median = tempAir.length % 2 === 0 ? (tempAir[middle - 1] + tempAir[middle]) / 2 : tempAir[middle];\n\n    // Limpa o array\n    flow.set('tempAir', []);\n\n    return { payload: median };\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "32246e06409708fc"
+            ]
+        ]
+    },
+    {
+        "id": "8b3303c52a7dd7a7",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Injeção a cada 10s",
+        "props": [],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "d82f2ab8db1f617c"
+            ]
+        ]
+    },
+    {
+        "id": "7a13c110a141347c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mediana",
+        "func": "var lumAir = flow.get('lumAir') || [];\n\nif (lumAir.length > 0) {\n    // Organiza o array\n    lumAir.sort(function (a, b) {\n        return a - b;\n    });\n\n    // Calcula a mediana\n    var middle = Math.floor(lumAir.length / 2);\n    var median = lumAir.length % 2 === 0 ? (lumAir[middle - 1] + lumAir[middle]) / 2 : lumAir[middle];\n\n    // Limpa o array\n    flow.set('lumAir', []);\n\n    return { payload: median };\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1500,
+        "wires": [
+            [
+                "0a641d4accb7518e"
+            ]
+        ]
+    },
+    {
+        "id": "c712c9a7515744fd",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Injeção a cada 10s",
+        "props": [],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 1500,
+        "wires": [
+            [
+                "7a13c110a141347c"
+            ]
+        ]
+    },
+    {
+        "id": "14032d0d99b05a5e",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Array medidas",
+        "func": "var lumAir = flow.get('lumAir') || [];\n\n// Converte o payload para um número e adiciona ao array\nvar currentLum = parseFloat(msg.payload);\nif (!isNaN(currentLum)) {\n    lumAir.push(currentLum);\n    flow.set('lumAir', lumAir);\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37d0f1bc65a06eca",
+        "type": "ui_template",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc9860736e85f9a2",
+        "name": "Webcam",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<iframe width=\"640\" height=\"480\" src=\"http://raspberrypi.local:8081/0/stream\" frameborder=\"0\"></iframe>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 100,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74318ce133261a9f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mediana",
+        "func": "var tempAir = flow.get('tempAir') || [];\n\nif (tempAir.length > 0) {\n    // Organiza o array\n    tempAir.sort(function (a, b) {\n        return a - b;\n    });\n\n    // Calcula a mediana\n    var middle = Math.floor(tempAir.length / 2);\n    var median = tempAir.length % 2 === 0 ? (tempAir[middle - 1] + tempAir[middle]) / 2 : tempAir[middle];\n\n    // Limpa o array\n    flow.set('tempAir', []);\n\n    return { payload: median };\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "25213c61753059e8"
+            ]
+        ]
+    },
+    {
+        "id": "b09a6e37c1fe3ebe",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Injeção a cada 1h",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 580,
+        "wires": [
+            [
+                "74318ce133261a9f"
+            ]
+        ]
+    },
+    {
+        "id": "4fca70f11bc49625",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica e-mail",
+        "func": "var targetTemp = flow.get('targetTemp') || 35;\nvar toleranceTemp = flow.get('toleranceTemp') || 5;\nvar alertTemp = flow.get('alertTemp') || 25;\n\n//  Manda e-mail caso a medição for maior que a soma do alvo e tolerância\nif (alertTemp >= targetTemp + toleranceTemp) {\n    msg.topic = \"Alerta de temperatura\";\n    msg.payload = \"A temperatura atingiu o valor crítico. Temperatura atual: \" + alertTemp + \"°C\";\n    return [msg, null];\n} else {\n    return [null, msg];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 580,
+        "wires": [
+            [
+                "b3e019c6e3072716"
+            ]
+        ]
+    },
+    {
+        "id": "755eb22a46373946",
+        "type": "e-mail",
+        "z": "f6f2187d.f17ca8",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "lucasbezrocha@gmail.com",
+        "dname": "E-mail",
+        "x": 1110,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "25213c61753059e8",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alertTemp",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "4fca70f11bc49625"
+            ]
+        ]
+    },
+    {
+        "id": "b05b682baffaab42",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica e-mail",
+        "func": "var targetHum = flow.get('targetHum') || 50;\nvar currentHum = flow.get('currentHum') || 70;\n\n//  Manda e-mail caso a medição for menor que o alvo\nif (currentHum <= targetHum) {\n    msg.topic = \"Alerta de umidade\";\n    msg.payload = \"A umidade do solo atingiu o valor crítico. Umidade do solo atual: \" + currentHum + \"%\";\n    return [msg, null];\n} else {\n    return [null, msg];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1100,
+        "wires": [
+            [
+                "fc53d95c4e20b12f"
+            ]
+        ]
+    },
+    {
+        "id": "9b39a075541797c0",
+        "type": "e-mail",
+        "z": "f6f2187d.f17ca8",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "lucasbezrocha@gmail.com",
+        "dname": "E-mail",
+        "x": 1110,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "f6db123469c169fa",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Seção LDR",
+        "info": "",
+        "x": 110,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "e708982c2eea6514",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mediana",
+        "func": "var tempAir = flow.get('tempAir') || [];\n\nif (tempAir.length > 0) {\n    // Organiza o array\n    tempAir.sort(function (a, b) {\n        return a - b;\n    });\n\n    // Calcula a mediana\n    var middle = Math.floor(tempAir.length / 2);\n    var median = tempAir.length % 2 === 0 ? (tempAir[middle - 1] + tempAir[middle]) / 2 : tempAir[middle];\n\n    // Limpa o array\n    flow.set('tempAir', []);\n\n    return { payload: median };\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1680,
+        "wires": [
+            [
+                "95a67d9c5b8c9410"
+            ]
+        ]
+    },
+    {
+        "id": "2c6a8ae10fa0142d",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Injeção a cada 1h",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 1680,
+        "wires": [
+            [
+                "e708982c2eea6514"
+            ]
+        ]
+    },
+    {
+        "id": "df979f2fa3302dd9",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Lógica e-mail",
+        "func": "var targetLum = flow.get('targetLum') || 50;\nvar toleranceLum = flow.get('toleranceLum') || 10;\nvar alertLum = flow.get('alertLum') || 70;\n\n//  Manda e-mail caso a medição for menor que a soma do alvo e tolerância\nif (alertLum <= targetLum + toleranceLum) {\n    msg.topic = \"Alerta de luminosidade\";\n    msg.payload = \"A luminosidade atingiu o valor crítico. Temperatura atual: \" + alertLum + \"%\";\n    return [msg, null];\n} else {\n    return [null, msg];\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1680,
+        "wires": [
+            [
+                "9084ba0c90dab980"
+            ]
+        ]
+    },
+    {
+        "id": "f089c0fd761a76a8",
+        "type": "e-mail",
+        "z": "f6f2187d.f17ca8",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "lucasbezrocha@gmail.com",
+        "dname": "E-mail",
+        "x": 1110,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "95a67d9c5b8c9410",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Definir flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alertLum",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1680,
+        "wires": [
+            [
+                "df979f2fa3302dd9"
+            ]
+        ]
+    },
+    {
+        "id": "b3e019c6e3072716",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático ventoinha",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoBulb\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 580,
+        "wires": [
+            [
+                "755eb22a46373946"
+            ]
+        ]
+    },
+    {
+        "id": "fc53d95c4e20b12f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático bomba",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoPump\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1100,
+        "wires": [
+            [
+                "9b39a075541797c0"
+            ]
+        ]
+    },
+    {
+        "id": "9084ba0c90dab980",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Modo automático ventoinha",
+        "func": "// Função que checa se está no modo automático\nvar autoMode = global.get(\"autoBulb\") || false;\n\nif (autoMode) {\n    return msg;\n} else {\n    return null;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1680,
+        "wires": [
+            [
+                "f089c0fd761a76a8"
+            ]
+        ]
+    },
+    {
+        "id": "65d182d4f80bb3b3",
+        "type": "ui_group",
+        "name": "Controle de temperatura",
+        "tab": "3d5e089f54e276ef",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "3fec0b2de8663cc9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.169",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b47db99b0a8cb72e",
+        "type": "ui_group",
+        "name": "Controle de umidade do solo",
+        "tab": "3d5e089f54e276ef",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "cc11f6763fe9a715",
+        "type": "ui_group",
+        "name": "Controle de luminosidade",
+        "tab": "3d5e089f54e276ef",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "cc9860736e85f9a2",
+        "type": "ui_group",
+        "name": "Transmissão ao vivo",
+        "tab": "3d5e089f54e276ef",
+        "order": 4,
+        "disp": true,
+        "width": "13",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3d5e089f54e276ef",
+        "type": "ui_tab",
+        "name": "Dashboard estufa automatizada",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     }
 ]
