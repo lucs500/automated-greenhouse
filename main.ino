@@ -45,7 +45,7 @@ void setup() {
   digitalWrite(FAN_PIN, LOW);
   digitalWrite(PUMP_PIN, LOW);  // Desligando ventoinha e bomba inicialmente
 
-  // Set the MQTT callback
+  // Callback MQTT
   client.setCallback(mqttCallback);
 
   pinMode(PWM_FAN_PIN, OUTPUT);
@@ -94,7 +94,7 @@ void loop() {
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
   String topicStr = topic;
 
-  // Convert the payload to a string
+  // Converte o payload em string
   payload[length] = '\0';
   String payloadStr = String((char*)payload);
 
